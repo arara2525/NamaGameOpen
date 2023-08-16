@@ -1,0 +1,44 @@
+{
+    "name": "NamaGameOpen",
+    "description": "ニコ生ゲーム一覧から条件に該当するゲームが起動されたら開く",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "./image/icon16.png",
+        "48": "./image/icon48.png",
+        "128": "./image/icon128.png"
+    },
+    "action": {
+        "default_icon": "./image/icon48.png",
+        "default_title": "NamageOpen設定",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "css": [
+                "./css/content.css"
+            ],
+            "js": [
+                "./js/content.js"
+            ],
+            "matches": [
+                "https://site.live.nicovideo.jp/recent/namagame.html"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "resources": [
+                "js/setting.js",
+                "css/*.css"
+            ]
+        }
+    ]
+}

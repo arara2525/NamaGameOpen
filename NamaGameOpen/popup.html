@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NamageOpen設定</title>
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    <script type="module" src="./js/popup.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="tab-set">
+            <!-- TAB1 -->
+            <label>
+                <input type="radio" class="tab_radio" name="tab-set" checked>共通設定
+            </label>
+            <div class="contents">
+                <div class="row mt4">
+                    <input type="text" id="updateTime" value="30" />(秒)毎にページ自動更新する
+                </div>
+
+                <div class="row mt4">
+                    以下文字列を含むゲームを開く対象とする
+                </div>
+                <div class="row">
+                    <div>
+                        <textarea rows="3" id="searchWord" placeholder="コンマ区切り"></textarea>
+                    </div>
+                </div>
+
+                <div class="row mt4">
+                    以下ユーザーIDの放送は除外対象とする
+                </div>
+                <div class="row">
+                    <div>
+                        <textarea rows="3" id="userId" placeholder="コンマ区切り"></textarea>
+                    </div>
+                </div>
+                <div class="row mb3">
+                    <div class="notice">※ユーザーIdによる除外は、アイコンのURLに含まれるIDから判断しています。デフォルトアイコンにはIDが含まれいないため除外できません</div>
+                </div>
+
+                <div class="row mt4">
+                    <div class="mr1">OFF</div>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="toggle" class="toggle-input">
+                        <label for="toggle" class="toggle-label"></label>
+                    </div>
+                    <div class="ml1">ON</div>
+                    <div class="ml5">
+                        <a href="https://site.live.nicovideo.jp/recent/namagame.html" target="_blank"
+                            id="namagame_page_open">生ゲームプレイ中を開く</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB2 -->
+            <label>
+                <input type="radio" class="tab_radio" name="tab-set">プレイ待ちの番組
+            </label>
+            <div class="contents">
+                <div class="row mt4">
+                    <label><input type="checkbox" id="flagWantedNoCheck">視聴者を待っているゲームがあっても開かない</label>
+                </div>
+                <div class="row mt4">
+                    <label><input type="checkbox" id="flagWantedHidden">視聴者を待っているゲームは非表示にする</label>
+                </div>
+            </div>
+
+            <!-- TAB3 -->
+            <label>
+                <input type="radio" class="tab_radio" name="tab-set">プレイ中の番組
+            </label>
+            <div class="contents">
+                <div class="row mt4">
+                    最新のゲームから<input type="text" id="checkLvCount" value="3">つまでをチェック対象とする
+                </div>
+            </div>
+        </div>
+
+        <div class="area_button mt2">
+            <div>
+                <a href="" id="updateSettings" class="btn btn--black btn--cubic btn--shadow">保存</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
